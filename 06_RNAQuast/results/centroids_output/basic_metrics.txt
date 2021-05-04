@@ -1,0 +1,12 @@
+METRICS/TRANSCRIPTS                                    centroids                
+ == BASIC TRANSCRIPTS METRICS (calculated without reference genome and gene database) == 
+Transcripts                                            264703                   
+
+Transcripts > 500 bp                                   152852                   
+Transcripts > 1000 bp                                  75519                    
+
+Average length of assembled transcripts                993.978                  
+Longest transcript                                     27236                    
+Total length                                           263108997                
+
+Transcript N50                                         2496                     

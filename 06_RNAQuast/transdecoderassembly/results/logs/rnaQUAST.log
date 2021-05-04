@@ -1,0 +1,94 @@
+/isg/shared/apps/rnaQUAST/1.5.2/rnaQUAST.py --transcripts ../../05_Clustering/clustertransdecoder/centroids.fasta --gene_mark --threads 8 --output_dir results
+
+rnaQUAST version: 1.5.2
+
+System information:
+  OS: Linux-3.10.0-1062.12.1.el7.x86_64-x86_64-with-centos-7.7.1908-Core (linux_64)
+  Python version: 2.7.5
+  CPUs number: 36
+
+External tools:
+  matplotlib version: 2.2.4
+  joblib version: 0.14.0
+  gffutils version: 0.9
+  blastn version: 2.7.1+
+  makeblastdb version: 2.7.1+
+  gmap version: 2019-06-10
+
+Started: 2021-04-18 20:11:38
+
+Logging to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/logs/rnaQUAST.log
+Using non strand specific transcripts...
+
+  2021-04-18 20:11:38
+  Getting transcripts from /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/clustertransdecoder/centroids.fasta...
+  Done.
+
+2021-04-18 20:11:38
+Transcripts:
+  /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/clustertransdecoder/centroids.fasta -> centroids
+
+
+Processing transcripts from /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/clustertransdecoder/centroids.fasta:
+
+  2021-04-18 20:11:38
+  Getting BASIC TRANSCRIPTS metrics...
+  Done.
+  Getting SENSITIVITY metrics...
+
+2021-04-18 20:11:38
+  Running GeneMarkS-T (Gene Prediction in Transcripts)...
+    saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/tmp/centroids_GeneMarkS-T/centroids.fasta.lst
+    logs can be found in /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/logs/centroids.GeneMarkS_T.out.log and /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/logs/centroids.GeneMarkS_T.err.log.
+  Done.
+
+Getting SEPARATED report for centroids...
+
+  2021-04-18 20:15:01
+  Getting TXT report...
+    Getting BASIC TRANSCRIPTS METRICS report...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/centroids_output/basic_metrics.txt
+    Getting ALIGNMENT METRICS report...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/centroids_output/alignment_metrics.txt
+    Getting ALIGNMENT METRICS FOR MISASSEMBLED (CHIMERIC) TRANSCRIPTS report...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/centroids_output/misassemblies.txt
+    Getting ASSEMBLY COMPLETENESS (SENSITIVITY) report...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/centroids_output/sensitivity.txt
+    Getting ASSEMBLY SPECIFICITY report...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/centroids_output/specificity.txt
+  Done.
+
+  2021-04-18 20:15:02
+  Getting DISTRIBUTION report...
+    Drawing cumulative transcript / isoform length plot...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/centroids_output/transcript_length.png
+    Drawing Nx plot...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/centroids_output/Nx.png
+  Done.
+
+  2021-04-18 20:15:03
+  Getting OTHER reports...
+  Done.
+
+2021-04-18 20:15:03
+Getting SHORT SUMMARY report...
+  saved to
+    /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/short_report.txt
+    /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/short_report.tex
+    /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/short_report.pdf
+
+THE QUALITY OF TRANSCRIPTOME ASSEMBLY DONE. RESULTS: /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results
+
+Separated assemblies reports are saved to
+  /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/centroids_output
+  PDF version (tables and plots) saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/short_report.pdf
+  TXT version (tables and plots) saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/short_report.txt
+
+Log saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/transdecoderassembly/results/logs/rnaQUAST.log
+
+Finished: 2021-04-18 20:15:03
+Elapsed time: 0:03:25.467852
+NOTICEs: 0; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using rnaQUAST!
+

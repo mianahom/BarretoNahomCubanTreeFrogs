@@ -1,0 +1,193 @@
+
+
+
+-------------------------------------------------
+start time            : Sat Apr 17 13:19:25 2021
+working directory     : /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/tmp/centroids_GeneMarkS-T
+command line          : /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta --output /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/tmp/centroids_GeneMarkS-T/centroids.fasta.lst
+output file with predictions : /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/tmp/centroids_GeneMarkS-T/centroids.fasta.lst
+input sequence        : /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta
+number of bins        : 0
+filter                : 1
+strand                : both
+markov chain order    : cod = 4, non = 2
+genetic code          : 1
+search for motif      : 1
+motif width           : 12
+prestart length       : 6
+fixed motif position  : 1
+off overlap           : 1
+identity threshold    : 0.99
+maximum iteration     : 10
+gene overlap off      : 1
+strand to predict on  : both
+GeneMarkS parameters  : /isg/shared/apps/GeneMarkS-T/5.1/par_1.default
+initial hmm model     : 
+output format         : LST
+output nucleotides    : 
+output proteins       : 
+gibbs_version         : 3
+
+         run starts here:
+prepare sequence
+/isg/shared/apps/GeneMarkS-T/5.1/probuild --par /isg/shared/apps/GeneMarkS-T/5.1/par_1.default --clean_join sequence --seq /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta --log gms.log
+Clean-Join      IN   OUT
+Contigs - 264703 75519
+All letters - 263108997   170539663
+Unambiguous letters - 263108997 166763763
+A - 72472497 45713393
+C - 59260692 37740414
+G - 58780722 37556078
+T - 72595086 45753878
+N - 0 0
+Parameters:
+  Minimum of unambiguous letters per record: 1000
+  Trim down substrings "N...N" to maximum length: 50
+  Connect records using gap filler: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+  Minimum of unambiguous letters in output: 50000
+system call done
+do_iterations = 1
+/isg/shared/apps/GeneMarkS-T/5.1/probuild --par /isg/shared/apps/GeneMarkS-T/5.1/par_1.default --stat_fasta --seq /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta > initial.meta.lst.feature 
+system call done
+min_GC=21  max_GC=77 total_seq_length=263108997
+(43)->(111394567)
+(44)->(136113604)
+(46)->(179552197)
+bin number = 1
+GC range = 21,77
+prepare sequence
+/isg/shared/apps/GeneMarkS-T/5.1/probuild --par /isg/shared/apps/GeneMarkS-T/5.1/par_1.default --clean_join sequence --seq /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta --log gms.log
+Clean-Join      IN   OUT
+Contigs - 264703 75519
+All letters - 263108997   170539663
+Unambiguous letters - 263108997 166763763
+A - 72472497 45713393
+C - 59260692 37740414
+G - 58780722 37556078
+T - 72595086 45753878
+N - 0 0
+Parameters:
+  Minimum of unambiguous letters per record: 1000
+  Trim down substrings "N...N" to maximum length: 50
+  Connect records using gap filler: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+  Minimum of unambiguous letters in output: 50000
+system call done
+do_iterations = 1
+run initial prediction
+/isg/shared/apps/GeneMarkS-T/5.1/gmhmmp -p 0  sequence  -m /isg/shared/apps/GeneMarkS-T/5.1/MetaGeneMark_v1.mod  -o itr_0.lst
+system call done
+entering iteration loop
+build model: itr_1.mod for iteration: 1
+/isg/shared/apps/GeneMarkS-T/5.1/probuild --par /isg/shared/apps/GeneMarkS-T/5.1/par_1.default --mkmod itr_1.mod --seq sequence --geneset itr_0.lst --ORDM 4 --order_non 2 --revcomp_non 1 --fixmotif --PRE_START_WIDTH 6 --width 12 --log gms.log
+Pos   A   C   G   T
+1 0.279 0.238 0.295 0.188
+2 0.321 0.243 0.228 0.208
+3 0.253 0.286 0.230 0.231
+4 0.327 0.212 0.293 0.168
+5 0.320 0.281 0.185 0.214
+6 0.245 0.260 0.235 0.259
+
+7 0.411 0.000 0.370 0.218
+8 0.000 0.000 0.000 1.000
+9 0.000 0.000 1.000 0.000
+
+10 0.319 0.169 0.322 0.190
+11 0.313 0.259 0.168 0.260
+12 0.195 0.236 0.313 0.256
+
+system call done
+prediction, iteration: 1
+/isg/shared/apps/GeneMarkS-T/5.1/gmhmmp -p 0  sequence  -m itr_1.mod  -o itr_1.lst -r
+system call done
+compare:
+/isg/shared/apps/GeneMarkS-T/5.1/probuild --par /isg/shared/apps/GeneMarkS-T/5.1/par_1.default --compare --source itr_1.lst --target itr_0.lst
+compare itr_0.lst and itr_1.lst: 0.0140
+build model: itr_2.mod for iteration: 2
+/isg/shared/apps/GeneMarkS-T/5.1/probuild --par /isg/shared/apps/GeneMarkS-T/5.1/par_1.default --mkmod itr_2.mod --seq sequence --geneset itr_1.lst --ORDM 4 --order_non 2 --revcomp_non 1 --fixmotif --PRE_START_WIDTH 6 --width 12 --log gms.log
+Pos   A   C   G   T
+1 0.234 0.208 0.346 0.212
+2 0.244 0.269 0.259 0.228
+3 0.266 0.324 0.228 0.183
+4 0.462 0.129 0.301 0.109
+5 0.352 0.266 0.187 0.195
+6 0.222 0.366 0.262 0.151
+
+7 1.000 0.000 0.000 0.000
+8 0.000 0.000 0.000 1.000
+9 0.000 0.000 1.000 0.000
+
+10 0.246 0.139 0.427 0.188
+11 0.300 0.356 0.166 0.178
+12 0.172 0.222 0.350 0.256
+
+system call done
+prediction, iteration: 2
+/isg/shared/apps/GeneMarkS-T/5.1/gmhmmp -p 0  sequence  -m itr_2.mod  -o itr_2.lst -r
+system call done
+compare:
+/isg/shared/apps/GeneMarkS-T/5.1/probuild --par /isg/shared/apps/GeneMarkS-T/5.1/par_1.default --compare --source itr_2.lst --target itr_1.lst
+compare itr_1.lst and itr_2.lst: 0.9384
+build model: itr_3.mod for iteration: 3
+/isg/shared/apps/GeneMarkS-T/5.1/probuild --par /isg/shared/apps/GeneMarkS-T/5.1/par_1.default --mkmod itr_3.mod --seq sequence --geneset itr_2.lst --ORDM 4 --order_non 2 --revcomp_non 1 --fixmotif --PRE_START_WIDTH 6 --width 12 --log gms.log
+Pos   A   C   G   T
+1 0.229 0.202 0.353 0.216
+2 0.234 0.274 0.262 0.231
+3 0.268 0.330 0.228 0.174
+4 0.494 0.113 0.298 0.096
+5 0.357 0.260 0.183 0.200
+6 0.217 0.379 0.272 0.133
+
+7 1.000 0.000 0.000 0.000
+8 0.000 0.000 0.000 1.000
+9 0.000 0.000 1.000 0.000
+
+10 0.225 0.136 0.451 0.188
+11 0.301 0.378 0.162 0.158
+12 0.172 0.219 0.351 0.257
+
+system call done
+prediction, iteration: 3
+/isg/shared/apps/GeneMarkS-T/5.1/gmhmmp -p 0  sequence  -m itr_3.mod  -o itr_3.lst -r
+system call done
+compare:
+/isg/shared/apps/GeneMarkS-T/5.1/probuild --par /isg/shared/apps/GeneMarkS-T/5.1/par_1.default --compare --source itr_3.lst --target itr_2.lst
+compare itr_2.lst and itr_3.lst: 0.9884
+build model: itr_4.mod for iteration: 4
+/isg/shared/apps/GeneMarkS-T/5.1/probuild --par /isg/shared/apps/GeneMarkS-T/5.1/par_1.default --mkmod itr_4.mod --seq sequence --geneset itr_3.lst --ORDM 4 --order_non 2 --revcomp_non 1 --fixmotif --PRE_START_WIDTH 6 --width 12 --log gms.log
+Pos   A   C   G   T
+1 0.231 0.201 0.353 0.215
+2 0.233 0.274 0.262 0.232
+3 0.269 0.330 0.228 0.173
+4 0.500 0.110 0.297 0.093
+5 0.358 0.258 0.182 0.202
+6 0.215 0.379 0.275 0.130
+
+7 1.000 0.000 0.000 0.000
+8 0.000 0.000 0.000 1.000
+9 0.000 0.000 1.000 0.000
+
+10 0.220 0.136 0.456 0.189
+11 0.303 0.383 0.161 0.153
+12 0.174 0.219 0.349 0.258
+
+system call done
+prediction, iteration: 4
+/isg/shared/apps/GeneMarkS-T/5.1/gmhmmp -p 0  sequence  -m itr_4.mod  -o itr_4.lst -r
+system call done
+compare:
+/isg/shared/apps/GeneMarkS-T/5.1/probuild --par /isg/shared/apps/GeneMarkS-T/5.1/par_1.default --compare --source itr_4.lst --target itr_3.lst
+compare itr_3.lst and itr_4.lst: 0.9973
+Stopped iterations on identity: 0.9973
+create: /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta.mod
+cp itr_4.mod /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta.mod
+system call done
+output: GeneMark_hmm.mod
+cp /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta.mod GeneMark_hmm.mod
+system call done
+predict genes using native model with motif
+/isg/shared/apps/GeneMarkS-T/5.1/gmhmmp -p 0 -b  -r -m GeneMark_hmm.mod -o /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/tmp/centroids_GeneMarkS-T/centroids.fasta.lst  /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta
+system call done
+rm -f sequence initial.meta.lst initial.meta.lst.fna initial.meta.lst.feature sequence itr_0.lst itr_1.mod itr_1.lst itr_2.mod itr_2.lst itr_3.mod itr_3.lst itr_4.mod itr_4.lst /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta.mod with_seq.out
+system call done
+End: Sat Apr 17 13:43:42 2021
+

@@ -1,0 +1,94 @@
+/isg/shared/apps/rnaQUAST/1.5.2/rnaQUAST.py --transcripts ../05_Clustering/centroids.fasta --gene_mark --threads 8 --output_dir results
+
+rnaQUAST version: 1.5.2
+
+System information:
+  OS: Linux-3.10.0-957.5.1.el7.x86_64-x86_64-with-centos-7.6.1810-Core (linux_64)
+  Python version: 2.7.5
+  CPUs number: 48
+
+External tools:
+  matplotlib version: 2.2.4
+  joblib version: 0.14.0
+  gffutils version: 0.9
+  blastn version: 2.7.1+
+  makeblastdb version: 2.7.1+
+  gmap version: 2019-06-10
+
+Started: 2021-04-17 13:19:15
+
+Logging to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/logs/rnaQUAST.log
+Using non strand specific transcripts...
+
+  2021-04-17 13:19:15
+  Getting transcripts from /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta...
+  Done.
+
+2021-04-17 13:19:24
+Transcripts:
+  /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta -> centroids
+
+
+Processing transcripts from /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/05_Clustering/centroids.fasta:
+
+  2021-04-17 13:19:24
+  Getting BASIC TRANSCRIPTS metrics...
+  Done.
+  Getting SENSITIVITY metrics...
+
+2021-04-17 13:19:24
+  Running GeneMarkS-T (Gene Prediction in Transcripts)...
+    saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/tmp/centroids_GeneMarkS-T/centroids.fasta.lst
+    logs can be found in /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/logs/centroids.GeneMarkS_T.out.log and /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/logs/centroids.GeneMarkS_T.err.log.
+  Done.
+
+Getting SEPARATED report for centroids...
+
+  2021-04-17 13:43:46
+  Getting TXT report...
+    Getting BASIC TRANSCRIPTS METRICS report...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/centroids_output/basic_metrics.txt
+    Getting ALIGNMENT METRICS report...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/centroids_output/alignment_metrics.txt
+    Getting ALIGNMENT METRICS FOR MISASSEMBLED (CHIMERIC) TRANSCRIPTS report...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/centroids_output/misassemblies.txt
+    Getting ASSEMBLY COMPLETENESS (SENSITIVITY) report...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/centroids_output/sensitivity.txt
+    Getting ASSEMBLY SPECIFICITY report...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/centroids_output/specificity.txt
+  Done.
+
+  2021-04-17 13:43:46
+  Getting DISTRIBUTION report...
+    Drawing cumulative transcript / isoform length plot...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/centroids_output/transcript_length.png
+    Drawing Nx plot...
+      saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/centroids_output/Nx.png
+  Done.
+
+  2021-04-17 13:43:50
+  Getting OTHER reports...
+  Done.
+
+2021-04-17 13:43:50
+Getting SHORT SUMMARY report...
+  saved to
+    /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/short_report.txt
+    /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/short_report.tex
+    /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/short_report.pdf
+
+THE QUALITY OF TRANSCRIPTOME ASSEMBLY DONE. RESULTS: /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results
+
+Separated assemblies reports are saved to
+  /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/centroids_output
+  PDF version (tables and plots) saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/short_report.pdf
+  TXT version (tables and plots) saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/short_report.txt
+
+Log saved to /labs/Knutie/BarretoNahomFrogs/modifiedanalysis/06_RNAQuast/results/logs/rnaQUAST.log
+
+Finished: 2021-04-17 13:43:52
+Elapsed time: 0:24:36.899558
+NOTICEs: 0; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using rnaQUAST!
+

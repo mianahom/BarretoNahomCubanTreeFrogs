@@ -1,0 +1,4 @@
+METRICS/TRANSCRIPTS                                    centroids                
+ == GeneMarkS-T METRICS == 
+Genes                                                  40973                    
+

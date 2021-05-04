@@ -1,0 +1,8 @@
+SHORT SUMMARY REPORT 
+
+METRICS/TRANSCRIPTS                                    centroids                
+
+ == BASIC TRANSCRIPTS METRICS == 
+Transcripts                                            42092                    
+Transcripts > 500 bp                                   16521                    
+Transcripts > 1000 bp                                  8357
