@@ -1,0 +1,126 @@
+## load packages
+library(dplyr)
+library(NOISeq)
+
+#Set directory paths to working directory
+count_dir <- "../EEB5300-PracticalGenomics/DESEQ2/" 
+# or appropriate path to the counts 
+
+##  Read count files AND create a dataframe to hold the count data
+
+#create a empty dataframe called m to merge the data into
+m = data.frame()
+list.files(pattern = ".counts")
+
+# using for loop read all the count files in the count_dir path
+for (i in list.files(pattern = ".counts")) {
+  print(paste0("reading file:", i))
+  #read file as a data frame
+  
+  f <- read.table(i, sep = "\t", header = TRUE)
+  #rename the columns
+  colnames(f) <- c("gene_id", substr(i, 1, nchar(i)-7))
+  #copy the data to another dataframe called f1
+  f1 <- subset(f, select= c("gene_id", substr(i, 1, nchar(i)-7)))
+  f1
+  #if the m is empty just copy the f to m
+  if(length(m) == 0){
+    m = f1
+    
+  } else 
+  {
+    #if the dataframe is not empty then merge the data
+    m <- merge(m, f1, by.x = "gene_id", by.y = "gene_id")
+  }
+  rm(f1)
+}
+
+#grab the rows from the 1st colum and use it as the row-names in the dataframe
+rownames(m) <- m[,1]
+rownames(m)
+
+# remove the column-1 (gene_ids) from the data frame using dplyr::select function
+m <- select(m, "AD-2-108-3", "AD-4-28-4", "AD-5-152-2", "AD-7-125-1", "AD-7-149-2", "AD-9-127-2")
+rm(f)
+colnames(m)
+#################################################
+## MetaData
+#################################################
+Sample = c("AD-2-108-3", "AD-4-28-4", "AD-5-152-2", "AD-7-125-1", "AD-7-149-2", "AD-9-127-2")
+Condition = c("imid", "control", "imid", "control", "imid", "control")
+myfactors <- data.frame(Sample, Condition)
+myfactors
+
+# first check wheter all the columns in dataframe(m) and myfactor is present
+all(colnames(m) %in% myfactors$Sample)
+
+# Then check the order is correct
+all(colnames(m) == myfactors$Sample[1])
+
+# Then order them according to the Sample names
+m <- m[, myfactors$Sample]
+
+# Now check the order is correct after sorting 
+all(colnames(m) == myfactors$Sample)
+colnames(m)
+myfactors$Sample
+df_length <- read.table("length.txt", sep = "\t", header = TRUE, row.names = 1)
+
+# create a vector to hold the length information
+mylength <- setNames(object = df_length$length, row.names(df_length))
+head(mylength)
+#####################################################
+##  NOISeq          
+#####################################################
+
+library(NOISeq)
+
+# Creating a NOISeq object
+mydata <- readData(data = m, factors = myfactors, length = mylength)
+mydata
+
+head(assayData(mydata)$exprs)
+head(featureData(mydata)@data)
+head(pData(mydata))
+#####################################################
+## Count Distribution 
+#####################################################
+countsbio = dat(mydata, factor = NULL, type = "countsbio")
+countsbio
+explo.plot(countsbio, samples = 1:6, plottype = "boxplot")
+explo.plot(countsbio, toplot = 1, samples = NULL, plottype = "boxplot")
+
+##############
+## Length Bias
+##############
+mylenghtbias = dat(mydata, factor = "Condition", type = "lengthbias")
+explo.plot(mylenghtbias, samples = NULL, toplot = "global")
+##############
+## PCA
+##############
+myPCA = dat(mydata, type = "PCA")
+explo.plot(myPCA, factor= "Condition")
+
+###########################
+## Differential Expression
+###########################
+# lc = 1 RPKM values with length correction
+# lc = 0 no length correction applied
+mynoiseq.bio <- noiseqbio(mydata,
+                          factor = "Condition",
+                          norm = "rpkm",
+                          random.seed = 12345,
+                          lc = 1)
+
+#head(mynoiseq.bio@results[[1]])
+mynoiseq.bio.deg = degenes(mynoiseq.bio, q = 0.9 , M= NULL)
+mynoiseq.bio.deg_up = degenes(mynoiseq.bio, q = 0.9 , M= "up")
+#head(mynoiseq.bio.deg_up)
+mynoiseq.bio.deg_down = degenes(mynoiseq.bio, q = 0.9 , M= "down")
+#head(mynoiseq.bio.deg_down)
+
+##plot of differentially expressed genes
+
+DE.plot(mynoiseq.bio, q = 0.95, graphic = "expr", log.scale = TRUE)
+Condition
+factor(Condition)
